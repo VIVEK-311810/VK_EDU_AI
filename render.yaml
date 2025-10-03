@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: whisper-transcriber
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "apt-get update && apt-get install -y ffmpeg && pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: WHISPER_MODEL_SIZE
+        value: base
