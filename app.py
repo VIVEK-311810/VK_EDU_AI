@@ -18,7 +18,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Configuration
-WHISPER_MODEL_SIZE = os.getenv('WHISPER_MODEL_SIZE', 'small')  # Options: tiny, base, small, medium, large
+WHISPER_MODEL_SIZE = os.getenv('WHISPER_MODEL_SIZE', 'base')  # Options: tiny, base, small, medium, large
 MAX_AUDIO_SIZE_MB = 50
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
